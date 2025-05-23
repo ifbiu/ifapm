@@ -1,4 +1,4 @@
-package ifalarm
+package ifapm
 
 import (
 	"context"

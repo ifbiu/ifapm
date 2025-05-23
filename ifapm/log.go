@@ -1,4 +1,4 @@
-package ifalarm
+package ifapm
 
 import (
 	"context"
@@ -19,9 +19,9 @@ func (l *Log) Info(ctx context.Context, action string, kv map[string]interface{}
 	logrus.WithFields(kv).Infoln(ctx)
 }
 
-func (l *Log) Error(ctx context.Context, action string, kv map[string]interface{}) {
+func (l *Log) Error(ctx context.Context, action string, kv map[string]interface{}, err error) {
 	kv["action"] = action
-	logrus.WithFields(kv).Errorln(ctx)
+	logrus.WithFields(kv).Errorln(err)
 }
 
 func (l *Log) Debug(ctx context.Context, action string, kv map[string]interface{}) {

@@ -1,4 +1,4 @@
-package ifalarm
+package ifapm
 
 import (
 	"os"
@@ -22,6 +22,8 @@ var (
 type endPoint struct {
 	stop chan int
 }
+
+var EndPoint = &endPoint{make(chan int)}
 
 func (e *endPoint) Start() {
 	for _, com := range globalStarters {
